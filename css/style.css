@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root{
+  --cream: #FAF2E4;
+  --paper: #FFFDF8;
+  --ink: #2E1B14;
+  --burgundy: #7C2233;
+  --burgundy-dark: #5A1622;
+  --gold: #C79A45;
+  --rose-tape: #E3B9B4;
+  --shadow: rgba(46, 27, 20, 0.25);
+  --max-w: 880px;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, #fffaf0 0%, var(--cream) 55%),
+    var(--cream);
+  color: var(--ink);
+  font-family: 'Lora', serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; }
+
+.container{
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Textura de fondo tipo papel ---------- */
+body::before{
+  content:"";
+  position: fixed;
+  inset:0;
+  pointer-events:none;
+  z-index: 0;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(124,34,51,0.03) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(199,154,69,0.05) 0, transparent 45%);
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height: 100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position: relative;
+  padding: 40px 24px;
+}
+
+.hero__eyebrow{
+  font-family:'Cormorant Garamond', serif;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  font-size: 0.75rem;
+  color: var(--burgundy);
+  margin-bottom: 18px;
+}
+
+.hero__title{
+  font-family:'Dancing Script', cursive;
+  font-weight:700;
+  font-size: clamp(2.8rem, 9vw, 5.5rem);
+  color: var(--burgundy-dark);
+  margin: 0 0 10px;
+  line-height: 1;
+}
+
+.hero__subtitle{
+  font-family:'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: #5b4536;
+  max-width: 480px;
+  margin: 0 0 44px;
+}
+
+/* Sello de cera */
+.seal{
+  --size: 110px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: radial-gradient(circle at 35% 30%, #9c2c3f, var(--burgundy) 60%, var(--burgundy-dark) 100%);
+  box-shadow: 0 10px 24px var(--shadow), inset 0 -6px 10px rgba(0,0,0,0.25), inset 0 4px 8px rgba(255,255,255,0.15);
+  color: #f6e6c8;
+  font-family:'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  letter-spacing: .08em;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  transition: transform .25s ease, box-shadow .25s ease;
+  animation: floatSeal 4s ease-in-out infinite;
+}
+.seal:hover{ transform: scale(1.06); box-shadow: 0 14px 30px var(--shadow), inset 0 -6px 10px rgba(0,0,0,0.25); }
+.seal:active{ transform: scale(0.97); }
+.seal::before{
+  content:"♡";
+  position:absolute;
+  top:14px;
+  font-size: 1.5rem;
+  color:#f6e6c8;
+}
+.seal span{ margin-top: 30px; }
+
+@keyframes floatSeal{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-6px); }
+}
+
+.scroll-hint{
+  margin-top: 34px;
+  font-size: 0.8rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:#8a6f57;
+  opacity: .8;
+}
+
+/* ---------- SECCIONES GENERALES ---------- */
+section{
+  position: relative;
+  z-index: 1;
+  padding: 90px 0;
+}
+
+.section-head{
+  text-align:center;
+  margin-bottom: 56px;
+}
+
+.section-head__eyebrow{
+  font-family:'Cormorant Garamond', serif;
+  letter-spacing:.3em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--burgundy);
+  margin-bottom: 10px;
+}
+
+.section-head__title{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:600;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--burgundy-dark);
+  margin:0;
+}
+
+/* ---------- CARTA ---------- */
+.letter{
+  display:flex;
+  justify-content:center;
+}
+
+.letter__frame{
+  position: relative;
+  max-width: 620px;
+  width: 100%;
+  background: var(--paper);
+  padding: 14px;
+  border-radius: 2px;
+  box-shadow: 0 18px 45px var(--shadow), 0 2px 0 rgba(0,0,0,0.04);
+  transform: rotate(-0.6deg);
+}
+
+.letter__frame img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius: 1px;
+}
+
+.tape{
+  position:absolute;
+  width: 90px;
+  height: 34px;
+  background: var(--rose-tape);
+  opacity: .75;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+.tape--tl{ top:-16px; left: -18px; transform: rotate(-40deg); }
+.tape--tr{ top:-16px; right: -18px; transform: rotate(40deg); }
+
+/* ---------- TIMELINE ---------- */
+.timeline{
+  position:relative;
+}
+
+.timeline__spine{
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:2px;
+  background: repeating-linear-gradient(to bottom, var(--gold) 0 8px, transparent 8px 16px);
+  transform: translateX(-50%);
+}
+
+.timeline__list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap: 70px;
+}
+
+.moment{
+  position:relative;
+  width: 100%;
+  display:flex;
+}
+.moment:nth-child(odd){ justify-content:flex-start; }
+.moment:nth-child(even){ justify-content:flex-end; }
+
+.moment__card{
+  width: min(340px, 44vw);
+  background: var(--paper);
+  padding: 10px 10px 18px;
+  box-shadow: 0 14px 30px var(--shadow);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.moment:nth-child(odd) .moment__card{ transform: translateY(30px) rotate(-2deg); }
+.moment:nth-child(even) .moment__card{ transform: translateY(30px) rotate(2deg); }
+.moment.in-view .moment__card{ opacity:1; transform: translateY(0) rotate(var(--r,-1.2deg)); }
+.moment:nth-child(odd).in-view .moment__card{ --r: -1.4deg; }
+.moment:nth-child(even).in-view .moment__card{ --r: 1.4deg; }
+
+.moment__card img{
+  display:block;
+  width:100%;
+  height: 230px;
+  object-fit: cover;
+  filter: sepia(6%) saturate(105%);
+}
+
+.moment__meta{
+  padding: 12px 6px 0;
+  text-align:center;
+}
+
+.moment__date{
+  font-family:'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--burgundy);
+  font-size: 0.85rem;
+  letter-spacing:.04em;
+}
+
+.moment__caption{
+  font-size: 0.85rem;
+  color:#5b4536;
+  margin-top:4px;
+}
+
+.moment__pin{
+  position:absolute;
+  top:-10px;
+  left:50%;
+  transform: translateX(-50%);
+  width:16px; height:16px;
+  border-radius:50%;
+  background: var(--burgundy);
+  box-shadow: 0 0 0 4px var(--cream), 0 3px 6px rgba(0,0,0,.3);
+  z-index:2;
+}
+
+/* ---------- CIERRE / CTA ---------- */
+.finale{
+  text-align:center;
+  padding-bottom: 140px;
+}
+
+.finale__title{
+  font-family:'Dancing Script', cursive;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  color: var(--burgundy-dark);
+  margin-bottom: 14px;
+}
+
+.finale__text{
+  font-family:'Cormorant Garamond', serif;
+  font-style: italic;
+  color:#5b4536;
+  max-width: 460px;
+  margin: 0 auto 36px;
+}
+
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background: var(--burgundy);
+  color: #fbeedd;
+  text-decoration:none;
+  font-family:'Cormorant Garamond', serif;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size: 0.85rem;
+  padding: 16px 34px;
+  border-radius: 999px;
+  box-shadow: 0 14px 28px var(--shadow);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+  opacity: 0;
+  pointer-events:none;
+  transform: translateY(14px);
+}
+.btn-primary.show{
+  opacity: 1;
+  pointer-events:auto;
+  transform: translateY(0);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.btn-primary:hover{ transform: translateY(-3px); box-shadow: 0 18px 34px var(--shadow); }
+
+.finale__hint{
+  margin-top: 18px;
+  font-size: 0.78rem;
+  color:#a08a72;
+  min-height: 1.2em;
+}
+
+footer{
+  text-align:center;
+  padding: 30px 0 40px;
+  font-size: 0.75rem;
+  color:#a08a72;
+  letter-spacing:.08em;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 640px){
+  .moment__card{ width: 78vw; }
+  .timeline__spine{ left: 18px; }
+  .moment{ justify-content:flex-start !important; padding-left: 34px; }
+  .moment__pin{ left: 18px; }
+  .letter__frame{ margin: 0 8px; }
+}
+
+/* Foco visible para accesibilidad */
+a:focus-visible, button:focus-visible{
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
