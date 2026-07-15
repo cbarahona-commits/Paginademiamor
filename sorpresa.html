@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu sorpresa</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .surprise{
+    min-height: 100svh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 60px 24px;
+  }
+  .surprise__card{
+    max-width: 460px;
+    width:100%;
+    text-align:center;
+    background: var(--paper);
+    padding: 48px 32px 40px;
+    box-shadow: 0 20px 50px var(--shadow);
+    position:relative;
+  }
+  .surprise__eyebrow{
+    font-family:'Cormorant Garamond', serif;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    font-size: 0.72rem;
+    color: var(--burgundy);
+    margin-bottom: 14px;
+  }
+  .surprise__title{
+    font-family:'Dancing Script', cursive;
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    color: var(--burgundy-dark);
+    margin: 0 0 10px;
+  }
+  .surprise__date{
+    font-family:'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color:#5b4536;
+    margin-bottom: 28px;
+  }
+  .surprise__date strong{
+    color: var(--burgundy);
+    font-style: normal;
+  }
+  .surprise__img-wrap{
+    background:#fff;
+    padding: 18px 12px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    margin-bottom: 26px;
+    transform: rotate(-1deg);
+  }
+  .surprise__img-wrap img{
+    width:100%;
+    display:block;
+  }
+  .surprise__text{
+    font-size: 0.95rem;
+    color:#5b4536;
+  }
+  .back-home{
+    display:inline-block;
+    margin-top: 26px;
+    font-family:'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--burgundy);
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+  <section class="surprise">
+    <div class="surprise__card">
+      <p class="surprise__eyebrow">Una cosa más</p>
+      <h1 class="surprise__title">Ya viene en camino</h1>
+      <p class="surprise__date">Te llegará el <strong>21 de julio</strong></p>
+
+      <div class="surprise__img-wrap">
+        <img src="images/sorpresa-envio.png" alt="Estado del envío: paquete recibido en las instalaciones del transportista">
+      </div>
+
+      <p class="surprise__text">Guárdalo en secreto un poquito más. Ya casi llega a tus manos. ❤</p>
+
+      <a href="index.html" class="back-home">volver a leer la carta</a>
+    </div>
+  </section>
+
+</body>
+</html>

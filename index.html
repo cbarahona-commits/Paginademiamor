@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti</title>
+<meta name="description" content="Una carta y nuestros momentos, guardados para ti.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <p class="hero__eyebrow">Con todo mi cariño</p>
+    <h1 class="hero__title">Para ti</h1>
+    <p class="hero__subtitle">Antes de seguir, léela con calma. Después, baja despacio y revive cada momento conmigo.</p>
+    <button class="seal" id="openSeal" aria-label="Abrir la carta">
+      <span>Abrir</span>
+    </button>
+    <p class="scroll-hint">desliza hacia abajo</p>
+  </header>
+
+  <main>
+    <section class="letter" id="carta">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-head__eyebrow">Capítulo uno</p>
+          <h2 class="section-head__title">La carta</h2>
+        </div>
+        <div class="letter__frame">
+          <span class="tape tape--tl" aria-hidden="true"></span>
+          <span class="tape tape--tr" aria-hidden="true"></span>
+          <img src="images/carta.png" alt="Carta de amor escrita a mano">
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline" id="momentos">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-head__eyebrow">14 de junio de 2026</p>
+          <h2 class="section-head__title">Nuestros momentos</h2>
+        </div>
+
+        <div style="position:relative;">
+          <div class="timeline__spine" aria-hidden="true"></div>
+          <ul class="timeline__list" id="timelineList">
+            <li class="moment"><span class="moment__pin"></span>
+              <div class="moment__card">
+                <img src="images/momento-01.jpg" alt="Selfie en el espejo del bar, entre luces de neón">
+                <div class="moment__meta">
+                  <p class="moment__date">14 de junio, 2026</p>
+                  <p class="moment__caption">Entre luces de neón, empezando la noche</p>
+                </div>
+              </div>
+            </li>
+            <li class="moment"><span class="moment__pin"></span>
+              <div class="moment__card">
+                <img src="images/momento-02.jpg" alt="Los dos mirando Bogotá desde lo alto de Monserrate">
+                <div class="moment__meta">
+                  <p class="moment__date">14 de junio, 2026</p>
+                  <p class="moment__caption">Bogotá entera a nuestros pies, en Monserrate</p>
+                </div>
+              </div>
+            </li>
+            <li class="moment"><span class="moment__pin"></span>
+              <div class="moment__card">
+                <img src="images/momento-03.jpg" alt="Un beso en la mejilla con la ciudad de fondo">
+                <div class="moment__meta">
+                  <p class="moment__date">14 de junio, 2026</p>
+                  <p class="moment__caption">Un beso con toda la ciudad de testigo</p>
+                </div>
+              </div>
+            </li>
+            <li class="moment"><span class="moment__pin"></span>
+              <div class="moment__card">
+                <img src="images/momento-04.jpg" alt="Los dos juntos, sonriendo, en lo alto del cerro">
+                <div class="moment__meta">
+                  <p class="moment__date">14 de junio, 2026</p>
+                  <p class="moment__caption">Ahí arriba, solo nosotros dos</p>
+                </div>
+              </div>
+            </li>
+            <li class="moment"><span class="moment__pin"></span>
+              <div class="moment__card">
+                <img src="images/momento-05.jpg" alt="Otro beso en la mejilla, ya en el santuario">
+                <div class="moment__meta">
+                  <p class="moment__date">14 de junio, 2026</p>
+                  <p class="moment__caption">Uno de tantos besos de ese día</p>
+                </div>
+              </div>
+            </li>
+            <li class="moment"><span class="moment__pin"></span>
+              <div class="moment__card">
+                <img src="images/momento-06.jpg" alt="Los dos posando junto al santuario">
+                <div class="moment__meta">
+                  <p class="moment__date">14 de junio, 2026</p>
+                  <p class="moment__caption">Guardando este recuerdo para siempre</p>
+                </div>
+              </div>
+            </li>
+            <li class="moment"><span class="moment__pin"></span>
+              <div class="moment__card">
+                <img src="images/momento-07.jpg" alt="Los dos entre los árboles, cerrando el día">
+                <div class="moment__meta">
+                  <p class="moment__date">14 de junio, 2026</p>
+                  <p class="moment__caption">Y así cerramos un día que lo cambió todo</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="container">
+        <h2 class="finale__title">Todavía hay algo más</h2>
+        <p class="finale__text">Ya viste la carta y cada momento. Falta una cosa más para ti.</p>
+        <a href="sorpresa.html" class="btn-primary" id="finaleBtn">Ver mi sorpresa →</a>
+        <p class="finale__hint" id="finaleHint"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>hecho con amor por Cristopher</footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
